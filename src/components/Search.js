@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, Input, ListGroup, ListGroupItem, Badge } from 'reactstrap'
+import { Form, FormGroup, Input, ListGroup, ListGroupItem } from 'reactstrap'
 
 import '../style/Search.sass'
+import js from '../svg/js.svg'
+import php from '../svg/php.svg'
 
 const language = [
   {
     objectID: 1,
     name: "PHP",
-    icone: ''
+    icone: php
   },
   {
     objectID: 2,
     name: "Javascript",
-    icone: ''
+    icone: js
   }
 ]
 
@@ -62,11 +64,11 @@ class Search extends Component {
             />
           </FormGroup>
         </Form>
-        
+
         <ListGroup>
           { language.sort(sortByName).filter(isSearched(searchTerm)).map(item =>
             <ListGroupItem key={item.objectID} className="justify-content-between">
-              {item.name} <Badge pill>2</Badge>
+              <img src={item.icone} alt={item.name} /> {item.name}
             </ListGroupItem>
           )}
         </ListGroup>

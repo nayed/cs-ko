@@ -10,7 +10,7 @@ class App extends Component {
         <Navigation />
         <div className="container-fluid">
           <div className="row">
-            <div className="col-4">
+            <div className="col-sm-4">
               <Search />
             </div>
           </div>

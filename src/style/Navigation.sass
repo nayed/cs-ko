@@ -2,29 +2,32 @@
   color: #F5F5F5
 
 .navigation
-  border-bottom-color: #eaeaea !important
-  border-bottom-width: thin !important
+  border-bottom-color: #eaeaea
+  border-bottom-width: thin
   background-color: #0A3442
+  letter-spacing: 2px
   a
     color: #F4F7F7
     &:hover
       color: #FFF7AE
   ul
     li
-      padding-left: 10px
+      padding-left: 15px
       a
         &:hover
           background-color: #104455
   .navbar-toggler
     border: 1px solid #F5F5F5
-    color: #FFFFFF
+    margin-top: 10px
     &:before
-      content: "\f0c9"
-      font-style: normal
-      font-weight: 400
-      text-decoration: inherit
-      font-family: FontAwesome
-      padding-left: 15px
+      display: block
+      content: ' '
+      background-image: url('../svg/menu.svg')
+      background-repeat: no-repeat
+      height: 30px
+      width: 35px
+      margin-top: 3px
+      margin-bottom: -15px
   .navbar-brand
     img
       width: 30px

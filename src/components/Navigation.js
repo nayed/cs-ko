@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import FA from 'react-fontawesome'
-import '../style/Navigation.sass'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+
+import '../style/Navigation.sass'
 
 class Navigation extends Component {
   constructor(props) {
@@ -20,13 +21,14 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <Navbar color="faded" light toggleable className="navigation">
+        <Navbar toggleable className="navigation">
           <NavbarToggler right onClick={this.toggle} />
           <NavbarBrand href="/"><span>Coding Style Koolog </span>
             <FA
               name='book'
             />
           </NavbarBrand>
+
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto nav navbar-right" navbar>
               <NavItem>

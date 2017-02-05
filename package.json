@@ -2,6 +2,16 @@
   "name": "cs-ko",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayed/cs-ko.git"
+  },
+  "author": "Nayed Saïd Ali",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nayed/cs-ko/issues"
+  },
+  "homepage": "https://nayed.github.io/cs-ko",
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",
@@ -51,6 +61,7 @@
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "bootswatch": "^3.3.7",
+    "gh-pages": "^0.12.0",
     "normalize.css": "^5.0.0",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
@@ -62,7 +73,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "deploy" : "npm run build && gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [

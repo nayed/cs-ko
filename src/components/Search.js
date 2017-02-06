@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Form, FormGroup, Input, ListGroup, ListGroupItem } from 'reactstrap'
 
 import '../style/Search.sass'
+
 import js from '../svg/js.svg'
 import php from '../svg/php.svg'
 

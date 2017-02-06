@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 
 import '../style/Navigation.sass'
 import book from '../svg/book.svg'
@@ -13,11 +13,13 @@ class Navigation extends Component {
       isOpen: false
     }
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     })
   }
+
   render() {
     return (
       <div>

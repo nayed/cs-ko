@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import '../style/App.sass'
 import Navigation from './Navigation'
 import Search from './Search'
+
+import '../style/App.sass'
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
         <Navigation />
         <div className="container-fluid">
           <div className="row">
-            <div className="col-sm-4">
+            <div className="col-sm-3">
               <Search />
             </div>
           </div>

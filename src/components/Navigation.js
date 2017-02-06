@@ -25,7 +25,7 @@ class Navigation extends Component {
       <div>
         <Navbar toggleable className="navigation">
           <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand href="/">
+          <NavbarBrand href="#">
             <span>Coding Style Koolog <img src={book} alt="book" /></span>
           </NavbarBrand>
 

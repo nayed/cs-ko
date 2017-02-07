@@ -5,28 +5,11 @@ import List from './List'
 
 import '../style/Search.sass'
 
-import js from '../svg/js.svg'
-import php from '../svg/php.svg'
-
-const language = [
-  {
-    objectID: 1,
-    name: "PHP",
-    icone: php
-  },
-  {
-    objectID: 2,
-    name: "Javascript",
-    icone: js
-  }
-]
-
 class Search extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      language,
       searchTerm: ''
     }
 
@@ -38,7 +21,7 @@ class Search extends Component {
   }
 
   render() {
-    const { searchTerm, language } = this.state
+    const { searchTerm } = this.state
 
     return (
       <div>
@@ -53,7 +36,6 @@ class Search extends Component {
         </Form>
 
         <List
-          language={language}
           searchTerm={searchTerm}
         />
       </div>

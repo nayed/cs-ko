@@ -1,10 +1,12 @@
 [
   {
     "objectID": 0,
-    "name": "PHP"
+    "name": "PHP",
+    "icone": "php"
   },
   {
     "objectID": 1,
-    "name": "Javascript"
+    "name": "Javascript",
+    "icone": "js"
   }
 ]

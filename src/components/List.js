@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { ListGroup, ListGroupItem } from 'reactstrap'
+import { ListGroup, ListGroupItem, Collapse } from 'reactstrap'
 
 import languages from "../db.json"
 
 import '../style/List.sass'
 
-import js from '../svg/javascript.svg'
+import js from '../svg/js.svg'
 import php from '../svg/php.svg'
 
 class List extends Component {
@@ -13,8 +13,15 @@ class List extends Component {
     super(props)
 
     this.state = {
-      languages,
+      languages
     }
+
+    this.toggle = this.toggle.bind(this)
+    this.state = { collapse: false }
+  }
+
+  toggle() {
+    this.setState({ collapse: !this.state.collapse })
   }
 
   render() {
@@ -48,9 +55,9 @@ class List extends Component {
     */
     const pushSvg = () => {
       const svgFile = [js, php]
-      languages.map(langue => {
+      languages.map(language => {
         return svgFile.map(file => {
-          return file.includes(langue.name.toLowerCase()) ? langue["icone"] = file : ''
+          return file.includes(language.icone.toLowerCase()) ? language["icone"] = file : ''
         })
       })
     }
@@ -61,8 +68,15 @@ class List extends Component {
       <div>
         <ListGroup>
           { languages.sort(sortByName).filter(isSearched(searchTerm)).map(item =>
-            <ListGroupItem key={item.objectID} className="justify-content-between">
-              <img src={item.icone} alt={item.name} /> {item.name}
+            <ListGroupItem onClick={this.toggle} key={item.objectID} className="justify-content-between">
+              <a href="#">
+                <span className="languages"><img src={item.icone} alt={item.name} /> {item.name}</span>
+              </a>
+              <Collapse isOpen={this.state.collapse}>
+                <ul>
+                  <li>Blablabla</li>
+                </ul>
+              </Collapse>
             </ListGroupItem>
           )}
         </ListGroup>

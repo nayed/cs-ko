@@ -74,7 +74,7 @@ class List extends Component {
                   <span className="languages"><img src={language.icone} alt={language.name} /> {language.name}</span>
                 </summary>
                 <ul>
-                  <li>Blablabla</li>
+                  <li>Hahaha</li>
                 </ul>
               </details>
             </ListGroupItem>

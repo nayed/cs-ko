@@ -14,6 +14,11 @@ class App extends Component {
             <div className="col-sm-3">
               <Search />
             </div>
+            <div className="col-sm-8">
+              <section className="content text-center">
+                Bienvenue sur CS-KO
+              </section>
+            </div>
           </div>
         </div>
       </div>

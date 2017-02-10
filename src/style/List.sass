@@ -1,5 +1,13 @@
+ul
+  li
+    img
+      width: 30px
+
 summary::-webkit-details-marker
    display: none
+
+summary
+  outline: none
 
 summary:after
    content: "+"
@@ -12,5 +20,15 @@ summary:after
    text-align: center
    width: 20px
 
-details[open] summary:after
+details[open]
+  summary:after
    content: "-"
+   font-size: 1.7em
+
+
+.list-group
+  border: 0.5px solid #bdbdbd
+  border-radius: 2px
+  padding: 0
+  details[open]
+    background: whitesmoke

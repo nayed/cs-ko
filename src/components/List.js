@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ListGroup, ListGroupItem, Collapse } from 'reactstrap'
+import { ListGroup, ListGroupItem } from 'reactstrap'
 
 import languages from "../db.json"
 
@@ -67,16 +67,16 @@ class List extends Component {
     return (
       <div>
         <ListGroup>
-          { languages.sort(sortByName).filter(isSearched(searchTerm)).map(item =>
-            <ListGroupItem onClick={this.toggle} key={item.objectID} className="justify-content-between">
-              <a href="#">
-                <span className="languages"><img src={item.icone} alt={item.name} /> {item.name}</span>
-              </a>
-              <Collapse isOpen={this.state.collapse}>
+          { languages.sort(sortByName).filter(isSearched(searchTerm)).map(language =>
+            <ListGroupItem onClick={this.toggle} key={language.objectID} className="justify-content-between">
+              <details>
+                <summary>
+                  <span className="languages"><img src={language.icone} alt={language.name} /> {language.name}</span>
+                </summary>
                 <ul>
                   <li>Blablabla</li>
                 </ul>
-              </Collapse>
+              </details>
             </ListGroupItem>
           )}
         </ListGroup>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Navigation from './Navigation'
 import Search from './Search'
+import Content from './Content'
 
 import '../style/App.sass'
 
@@ -15,9 +16,7 @@ class App extends Component {
               <Search />
             </div>
             <div className="col-sm-8">
-              <section className="content text-center">
-                Bienvenue sur CS-KO
-              </section>
+              <Content />
             </div>
           </div>
         </div>

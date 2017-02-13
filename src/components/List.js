@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ListGroup, ListGroupItem } from 'reactstrap'
+import { ListGroup, ListGroupItem, Button } from 'reactstrap'
 
 import languages from "../db.json"
 
@@ -25,7 +25,6 @@ class List extends Component {
   }
 
   render() {
-
     /**
     * Search terms in the languages by name
     */
@@ -61,7 +60,6 @@ class List extends Component {
         })
       })
     }
-
     pushSvg()
 
     return (
@@ -73,9 +71,15 @@ class List extends Component {
                 <summary>
                   <span className="languages"><img src={language.icone} alt={language.name} /> {language.name}</span>
                 </summary>
-                <ul>
-                  <li>Hahaha</li>
-                </ul>
+                { language.sections &&
+                  <ul>
+                    <li>
+                      { language.sections.map(section =>
+                        <Button key={Object.keys(section)} color="link">{ Object.keys(section) }</Button>
+                      )}
+                    </li>
+                  </ul>
+                }
               </details>
             </ListGroupItem>
           )}

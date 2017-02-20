@@ -3,7 +3,7 @@ import { Form, FormGroup, Input } from 'reactstrap'
 
 import List from './List'
 
-import '../style/Search.sass'
+import '../style/Search.scss'
 
 class Search extends Component {
   constructor(props) {

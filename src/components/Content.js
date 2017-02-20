@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import '../style/Content.sass'
+import '../style/Content.scss'
 
 class Content extends Component {
   render() {

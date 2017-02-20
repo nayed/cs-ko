@@ -3,7 +3,7 @@ import { ListGroup, ListGroupItem, Button } from 'reactstrap'
 
 import languages from "../db.json"
 
-import '../style/List.sass'
+import '../style/List.scss'
 
 import js from '../svg/js.svg'
 import php from '../svg/php.svg'
@@ -73,11 +73,11 @@ class List extends Component {
                 </summary>
                 { language.sections &&
                   <ul>
-                    <li>
                       { language.sections.map(section =>
-                        <Button key={Object.keys(section)} color="link">{ Object.keys(section) }</Button>
+                      <li key={Object.keys(section)}>
+                        <Button color="link">{ Object.keys(section) }</Button>
+                      </li>
                       )}
-                    </li>
                   </ul>
                 }
               </details>

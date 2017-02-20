@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 
-import '../style/Navigation.sass'
+import '../style/Navigation.scss'
 import book from '../svg/book.svg'
 
 class Navigation extends Component {

@@ -3,7 +3,7 @@ import Navigation from './Navigation'
 import Search from './Search'
 import Content from './Content'
 
-import '../style/App.sass'
+import '../style/App.scss'
 
 class App extends Component {
   render() {

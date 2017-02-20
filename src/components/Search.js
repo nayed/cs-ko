@@ -1,30 +1,15 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, Input, ListGroup, ListGroupItem } from 'reactstrap'
+import { Form, FormGroup, Input } from 'reactstrap'
 
-import '../style/Search.sass'
+import List from './List'
 
-import js from '../svg/js.svg'
-import php from '../svg/php.svg'
-
-const language = [
-  {
-    objectID: 1,
-    name: "PHP",
-    icone: php
-  },
-  {
-    objectID: 2,
-    name: "Javascript",
-    icone: js
-  }
-]
+import '../style/Search.scss'
 
 class Search extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      language,
       searchTerm: ''
     }
 
@@ -36,23 +21,7 @@ class Search extends Component {
   }
 
   render() {
-    const isSearched = (searchTerm) => (item) =>
-      !searchTerm || item.name.toLowerCase().includes(searchTerm.toLowerCase())
-
-    const { searchTerm, language } = this.state
-
-    const sortByName = (a, b) => {
-      let nameA = a.name.toLowerCase()
-      let nameB = b.name.toLowerCase()
-      if (nameA < nameB) {
-        return -1
-      }
-      if (nameA > nameB) {
-        return 1
-      }
-      // names must be equal
-      return 0
-    }
+    const { searchTerm } = this.state
 
     return (
       <div>
@@ -66,13 +35,9 @@ class Search extends Component {
           </FormGroup>
         </Form>
 
-        <ListGroup>
-          { language.sort(sortByName).filter(isSearched(searchTerm)).map(item =>
-            <ListGroupItem key={item.objectID} className="justify-content-between">
-              <img src={item.icone} alt={item.name} /> {item.name}
-            </ListGroupItem>
-          )}
-        </ListGroup>
+        <List
+          searchTerm={searchTerm}
+        />
       </div>
     )
   }

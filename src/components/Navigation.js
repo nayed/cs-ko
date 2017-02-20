@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 
-import '../style/Navigation.sass'
+import '../style/Navigation.scss'
 import book from '../svg/book.svg'
 
 class Navigation extends Component {
@@ -25,7 +25,7 @@ class Navigation extends Component {
       <div>
         <Navbar toggleable className="navigation">
           <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand href="/">
+          <NavbarBrand href="#">
             <span>Coding Style Koolog <img src={book} alt="book" /></span>
           </NavbarBrand>
 

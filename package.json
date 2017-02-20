@@ -14,6 +14,7 @@
   "homepage": "https://nayed.github.io/cs-ko",
   "devDependencies": {
     "autoprefixer": "6.5.1",
+    "babel-cli": "^6.23.0",
     "babel-core": "6.17.0",
     "babel-eslint": "7.1.1",
     "babel-jest": "17.0.2",
@@ -43,6 +44,7 @@
     "jest": "17.0.2",
     "json-loader": "0.5.4",
     "node-sass": "^4.3.0",
+    "nodemon": "^1.11.0",
     "object-assign": "4.1.0",
     "path-exists": "2.1.0",
     "postcss-loader": "1.0.0",
@@ -59,9 +61,12 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "body-parser": "^1.16.1",
     "bootstrap": "4.0.0-alpha.6",
     "bootswatch": "^3.3.7",
+    "express": "^4.14.1",
     "gh-pages": "^0.12.0",
+    "morgan": "^1.8.1",
     "normalize.css": "^5.0.0",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
@@ -71,9 +76,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "dev": "babel-node server/server.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "deploy" : "npm run build && gh-pages -d build"
+    "deploy": "npm run build && gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [

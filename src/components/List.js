@@ -17,11 +17,16 @@ class List extends Component {
     }
 
     this.toggle = this.toggle.bind(this)
+    this.showSection = this.showSection.bind(this)
     this.state = { collapse: false }
   }
 
   toggle() {
     this.setState({ collapse: !this.state.collapse })
+  }
+
+  showSection(section) {
+    console.log(section)
   }
 
   render() {
@@ -75,7 +80,7 @@ class List extends Component {
                   <ul>
                       { language.sections.map(section =>
                       <li key={Object.keys(section)}>
-                        <Button color="link">{ Object.keys(section) }</Button>
+                        <Button value={section} color="link" onClick={() => this.showSection(section)}>{ Object.keys(section) }</Button>
                       </li>
                       )}
                   </ul>

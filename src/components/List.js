@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { ListGroup, ListGroupItem, Button } from 'reactstrap'
 
-import languages from "../db.json"
+import { data } from "../data.js"
 
 import '../style/List.scss'
 
@@ -13,10 +13,11 @@ class List extends Component {
     super(props)
 
     this.state = {
-      languages
+      data
     }
 
     this.toggle = this.toggle.bind(this)
+    this.showSection = this.showSection.bind(this)
     this.state = { collapse: false }
   }
 
@@ -24,15 +25,19 @@ class List extends Component {
     this.setState({ collapse: !this.state.collapse })
   }
 
+  showSection(section) {
+    console.log(section)
+  }
+
   render() {
     /**
-    * Search terms in the languages by name
+    * Search terms in data languages by name
     */
     const isSearched = (searchTerm) => (item) =>
       !searchTerm || item.name.toLowerCase().includes(searchTerm.toLowerCase())
 
     /**
-    * sort languages object by name by comparing them
+    * sort data object by name by comparing them
     */
     const sortByName = (a, b) => {
       let nameA = a.name.toLowerCase()
@@ -50,11 +55,11 @@ class List extends Component {
     const { searchTerm } = this.props
 
     /**
-    * Push svg file in the right languages object
+    * Push svg file in the right data object
     */
     const pushSvg = () => {
       const svgFile = [js, php]
-      languages.map(language => {
+      data.map(language => {
         return svgFile.map(file => {
           return file.includes(language.icone.toLowerCase()) ? language["icone"] = file : ''
         })
@@ -65,7 +70,7 @@ class List extends Component {
     return (
       <div>
         <ListGroup>
-          { languages.sort(sortByName).filter(isSearched(searchTerm)).map(language =>
+          { data.sort(sortByName).filter(isSearched(searchTerm)).map(language =>
             <ListGroupItem onClick={this.toggle} key={language.objectID} className="justify-content-between">
               <details>
                 <summary>
@@ -75,7 +80,7 @@ class List extends Component {
                   <ul>
                       { language.sections.map(section =>
                       <li key={Object.keys(section)}>
-                        <Button color="link">{ Object.keys(section) }</Button>
+                        <Button value={section} color="link" onClick={() => this.showSection(section)}>{ Object.keys(section) }</Button>
                       </li>
                       )}
                   </ul>

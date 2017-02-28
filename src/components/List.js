@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ListGroup, ListGroupItem, Button } from 'reactstrap'
-
+import Content from './Content'
 import { data } from "../data.js"
 
 import '../style/List.scss'
@@ -13,7 +13,8 @@ class List extends Component {
     super(props)
 
     this.state = {
-      data
+      data,
+      content: ''
     }
 
     this.toggle = this.toggle.bind(this)
@@ -26,7 +27,7 @@ class List extends Component {
   }
 
   showSection(section) {
-    console.log(section)
+    this.setState({ content: section })
   }
 
   render() {
@@ -68,27 +69,33 @@ class List extends Component {
     pushSvg()
 
     return (
-      <div>
-        <ListGroup>
-          { data.sort(sortByName).filter(isSearched(searchTerm)).map(language =>
-            <ListGroupItem onClick={this.toggle} key={language.objectID} className="justify-content-between">
-              <details>
-                <summary>
-                  <span className="languages"><img src={language.icone} alt={language.name} /> {language.name}</span>
-                </summary>
-                { language.sections &&
-                  <ul>
-                      { language.sections.map(section =>
-                      <li key={Object.keys(section)}>
-                        <Button value={section} color="link" onClick={() => this.showSection(section)}>{ Object.keys(section) }</Button>
-                      </li>
-                      )}
-                  </ul>
-                }
-              </details>
-            </ListGroupItem>
-          )}
-        </ListGroup>
+      <div className="row">
+        <div className="col-sm-3">
+          <ListGroup>
+            { data.sort(sortByName).filter(isSearched(searchTerm)).map(language =>
+              <ListGroupItem onClick={this.toggle} key={language.objectID} className="justify-content-between">
+                <details>
+                  <summary>
+                    <span className="languages"><img src={language.icone} alt={language.name} /> {language.name}</span>
+                  </summary>
+                  { language.sections &&
+                    <ul>
+                        { language.sections.map(section =>
+                        <li key={Object.keys(section)}>
+                          <Button value={section} color="link" onClick={() => this.showSection(section)}>{ Object.keys(section) }</Button>
+                        </li>
+                        )}
+                    </ul>
+                  }
+                </details>
+              </ListGroupItem>
+            )}
+          </ListGroup>
+        </div>
+
+        <div className="col-sm-8">
+          <Content value={this.state.content}/>
+        </div>
       </div>
     )
   }

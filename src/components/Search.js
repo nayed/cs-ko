@@ -25,15 +25,19 @@ class Search extends Component {
 
     return (
       <div>
-        <Form>
-          <FormGroup>
-            <Input
-              type="text"
-              value={searchTerm}
-              onChange={this.onSearchChange}
-            />
-          </FormGroup>
-        </Form>
+        <div className="row">
+          <div className="col-sm-3">
+            <Form>
+              <FormGroup>
+                <Input
+                  type="text"
+                  value={searchTerm}
+                  onChange={this.onSearchChange}
+                />
+              </FormGroup>
+            </Form>
+          </div>
+        </div>
 
         <List
           searchTerm={searchTerm}
